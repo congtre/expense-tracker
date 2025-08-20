@@ -11,56 +11,15 @@
   <div class="max-w-6xl mx-auto p-6 space-y-6">
     <h1 class="text-3xl font-bold text-center">📊 Quản lý chi tiêu gia đình</h1>
 
-    <!-- 1. Form nhập liệu -->
     <div class="bg-white rounded-2xl shadow p-4">
       <h2 class="text-xl font-semibold mb-2">➕ Thêm chi tiêu</h2>
-      <div id="formMount"></div>
-    </div>
-
-    <!-- 2. Bảng thống kê -->
-    <div class="bg-white rounded-2xl shadow p-4">
-      <h2 class="text-xl font-semibold mb-2">📋 Danh sách chi tiêu</h2>
-      <div class="overflow-x-auto">
-        <table class="w-full border-collapse">
-          <thead>
-            <tr class="bg-gray-200 text-sm">
-              <th class="border px-3 py-2 text-center w-24 md:min-w-[8rem]">Ngày</th>
-              <th class="border px-3 py-2 text-center w-24 md:min-w-[12rem]">Người</th>
-              <th class="border px-3 py-2 text-center w-24 md:min-w-[12rem]">Loại</th>
-              <th class="border px-3 py-2 text-center w-24 md:min-w-[12rem]">Số tiền</th>
-              <th class="border px-3 py-2 text-center">Ghi chú</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody" class="text-sm"></tbody>
-          <tfoot>
-            <tr class="bg-gray-50 font-semibold">
-              <td class="border px-3 py-2 text-center w-24 md:min-w-[8rem]">Tổng</td>
-              <td class="border px-3 py-2 w-24 md:min-w-[12rem]"></td>
-              <td class="border px-3 py-2 w-24 md:min-w-[12rem]"></td>
-              <td class="border px-3 py-2 w-24 md:min-w-[12rem] text-right" id="tableTotal">0</td>
-              <td class="border px-3 py-2"></td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-    </div>
-
-    <!-- 3. Bộ lọc -->
-    <div id="filters" class="bg-white rounded-2xl shadow p-4"></div>
-
-    <!-- 4. Tổng hợp nhanh -->
-    <div id="summary" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
-
-    <!-- 5. Biểu đồ -->
-    <div class="bg-white rounded-2xl shadow p-4">
-      <h2 class="text-xl font-semibold mb-2">📊 Biểu đồ theo loại</h2>
-      <div class="w-full max-w-2xl mx-auto">
-        <canvas id="chartCanvas" class="h-64"></canvas>
+      <div id="formMount">
+        <form id="expenseForm" class="space-y-3"> <div> <label class="block text-sm mb-1">Ngày</label> <input type="date" name="date" value="" class="w-full border rounded px-3 py-2" required> </div> <div> <label class="block text-sm mb-1">Người</label> <select name="user" class="w-full border rounded px-3 py-2" required> <option value="Mẹ">Mẹ</option> <option value="Ba">Ba</option> <option value="Gạo">Gạo</option> </select> </div> <div> <label class="block text-sm mb-1">Loại</label> <select name="category" class="w-full border rounded px-3 py-2" required> <option value="Nhà cửa & tiện ích">Nhà cửa & tiện ích</option> <option value="Ăn uống">Ăn uống</option> <option value="Đi lại & phương tiện">Đi lại & phương tiện</option> <option value="Sức khỏe & làm đẹp">Sức khỏe & làm đẹp</option> <option value="Giải trí & sở thích">Giải trí & sở thích</option> <option value="Giáo dục & học tập">Giáo dục & học tập</option> <option value="Mua sắm cá nhân">Mua sắm cá nhân</option> <option value="Tiết kiệm & đầu tư">Tiết kiệm & đầu tư</option> <option value="Khác">Khác</option> </select> </div> <div> <label class="block text-sm mb-1">Số tiền</label> <input type="number" name="amount" min="0" step="1000" class="w-full border rounded px-3 py-2" required> </div> <div> <label class="block text-sm mb-1">Ghi chú</label> <textarea name="note" rows="2" class="w-full border rounded px-3 py-2"></textarea> </div> <button class="w-full bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700">Lưu</button> </form>
       </div>
     </div>
   </div>
 
-  <script type="module" src="./src/app.js"></script>
+  <script type="module" src="./src/index.js"></script>
 </body>
 
 
